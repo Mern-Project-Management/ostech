@@ -1,0 +1,115 @@
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  animation: slide 30s linear infinite;
+}
+
+.client-image {
+  min-width: 20%; /* Adjust based on how many images you want visible */
+  margin-right: 10px;
+}
+
+@keyframes slide {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+
+.flip:hover .inner-flip {
+  transform: rotateY(180deg);
+}
+
+
+h1 {
+  font-size: 2.2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.section-title {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Flip card base styles */
+.flip-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 30vh;
+}
+
+.flip {
+  position: relative;
+  display: inline-block;
+  margin-right: 2px;
+  margin-bottom: 1em;
+  width: 50vh;
+  height: 30vh;
+}
+
+.flip > .front,
+.flip > .back {
+  display: block;
+  color: white;
+  width: 50vh;
+  background-size: cover !important;
+  background-position: center !important;
+  height: 30vh;
+  padding: 1em;
+  background: #313131;
+  border-radius: 10px;
+  transition: transform 0.5s cubic-bezier(.175, .885, .32, 1.275), opacity 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  transform: rotateY(0deg);
+}
+
+.back {
+  opacity: 0;
+  transform: rotateY(-180deg);
+}
+
+.flip:hover > .front {
+  transform: rotateY(180deg);
+}
+
+.flip:hover > .back {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+/* Flip vertical effect */
+.flip.flip-vertical > .back {
+  transform: rotateX(-180deg);
+}
+
+.flip.flip-vertical:hover > .front {
+  transform: rotateX(180deg);
+}
+
+.flip.flip-vertical:hover > .back {
+  transform: rotateX(0deg);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.04), 2px 2px rgba(0, 0, 0, 0.04), 3px 3px rgba(0, 0, 0, 0.04), 4px 4px rgba(0, 0, 0, 0.04), 0.125rem 0.125rem rgba(0, 0, 0, 0.04), 6px 6px rgba(0, 0, 0, 0.04), 7px 7px rgba(0, 0, 0, 0.04), 8px 8px rgba(0, 0, 0, 0.04), 9px 9px rgba(0, 0, 0, 0.04), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.04), 11px 11px rgba(0, 0, 0, 0.04), 12px 12px rgba(0, 0, 0, 0.04), 13px 13px rgba(0, 0, 0, 0.04), 14px 14px rgba(0, 0, 0, 0.04), 0.625rem 0.625rem rgba(0, 0, 0, 0.04), 16px 16px rgba(0, 0, 0, 0.04), 17px 17px rgba(0, 0, 0, 0.04), 18px 18px rgba(0, 0, 0, 0.04), 19px 19px rgba(0, 0, 0, 0.04), 1.25rem 1.25rem rgba(0, 0, 0, 0.04);
+}
+
+
