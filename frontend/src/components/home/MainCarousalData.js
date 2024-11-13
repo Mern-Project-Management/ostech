@@ -12,10 +12,7 @@ export const MainCarouselData = [
       path: "/women/clothing/womem_dress",
       title:"tarzon"
     },
-    {
-      image: main3,
-      path: "/women/clothing/womem_dress"
-    },
+    
     // {
     //   image: "https://www.nio.com/cdn-static/mynio/nextjs/images/homepage/second-frame/second-frame-et7-desktop.png",
     //   path: "/women/clothing/womem_saree"

@@ -8,10 +8,12 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './Collapsib
 import WhyChooseUs from './WhyChooseUs';
 import wc1 from "../../assets/whychoose1.gif"
 import { IoIosContact } from "react-icons/io";
+import InquiryForm from './InquiryForm';
 const ProductDetail = () => {
   const { productId } = useParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const [showInquiryForm, setShowInquiryForm] = useState(false);
+   
   const currentProduct = productCategories
     .flatMap(category => category.products)
     .find(product => product.id === parseInt(productId));
@@ -46,12 +48,19 @@ const ProductDetail = () => {
   return (
     <>
       <div className="px-4 py-8 flex  md:flex-row">
-        <aside className="w-full md:w-[25%] bg-[#1290ca]/20 md:pr-8 lg:px-7 mb-8 ">
+      {showInquiryForm && (
+                <InquiryForm
+                    productName="Conveyor"
+                    onClose={() => setShowInquiryForm(false)}
+                />
+            )}
+
+        <aside className="w-full md:w-[20%] bg-[#1290ca]/20 md:pr-8 lg:px-7 mb-8 ">
           <div className="md:sticky  h-[100vh] md:top-24">
-            <h2 className="text-2xl font-bold mb-4 p-4">Related Products</h2>
+            <h2 className="text-2xl text-[#052852] font-bold mb-4 p-4">Related Products</h2>
             {productCategories.map((category) => (
               <Collapsible key={category.name}>
-                <CollapsibleTrigger className="flex my-3 items-center justify-between w-full font-medium text-left text-gray-700 bg-white text-lg hover:bg-gray-100 rounded-md">
+                <CollapsibleTrigger className="flex my-3 items-center justify-between w-full font-medium text-left text-gray-700 bg-white text-[16px] hover:bg-gray-100 rounded-md">
                   {category.name}
                   <ChevronDown className="h-4 w-4" />
                 </CollapsibleTrigger>
@@ -60,7 +69,7 @@ const ProductDetail = () => {
                     <Button
                       key={product.id}
                       variant="ghost"
-                      className={`w-full justify-start text-[15px] hover:bg-white m-1 pl-4 ${product.id === parseInt(productId) ? 'bg-gray-100' : 'bg-gray-200/50 '}`}
+                      className={`w-full justify-start text-[13px] hover:bg-white m-1 pl-4 ${product.id === parseInt(productId) ? 'bg-gray-100' : 'bg-white '}`}
                       asChild
                     >
                       <Link to={`/products/${product.id}`}>{product.name}</Link>
@@ -69,14 +78,14 @@ const ProductDetail = () => {
                 </CollapsibleContent>
               </Collapsible>
             ))}
-            <div className='w-[36vh] rounded mt-10 h-[30vh] border bg-[#1290ca]/60'>
+            <div className='w-[30vh]  rounded mt-10 h-[30vh] border bg-[#052852]'>
               <div className='flex justify-center items-center mt-7'>
                 {/* <img src={wc1} alt="" className='w-1/4' /> */}
                 <IoIosContact className='text-[6rem] text-white' />
               </div>
               <div className='flex flex-col mt-3 justify-center items-center'>
-                <p className='text-2xl font-bold text-white'>+91 99783 88388</p>
-                <p className='text-2xl font-bold text-white'>rajneesh@ostech.in</p>
+                <p className='text-xl font-bold text-white'>+91 99783 88388</p>
+                <p className='text-xl font-bold text-white'>rajneesh@ostech.in</p>
               </div>
             </div>
           </div>
@@ -88,9 +97,9 @@ const ProductDetail = () => {
             <CardContent className="p-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left side Image Gallery */}
-                <div className="flex flex-col space-y-4">
+                <div className="flex  flex-col space-y-4">
                   {/* Main Image */}
-                  <div className="relative h-[20rem] w-full rounded-xl overflow-hidden bg-gray-100">
+                  <div className="relative h-[25rem] w-full rounded-xl overflow-hidden bg-gray-100">
                     <img
                       src={currentProduct.images?.[currentImageIndex] || '/default-image.jpg'}
                       alt={currentProduct.name}
@@ -140,23 +149,29 @@ const ProductDetail = () => {
                 <div className="flex flex-col space-y-6">
                   {/* Title, Subtitle, Description */}
                   <div>
-                    <h1 className="text-3xl font-bold tracking-tight">
+                    <h1 className="text-3xl text-[#052852]  font-bold tracking-tight">
                       {currentProduct.name}
                     </h1>
                     <p className="mt-2 text-gray-500">
                       Efficient Soap Cutting, Billet Shaping, and Stamping Solution
                     </p>
-                    <h2 className="text-xl font-semibold mt-4">Description</h2>
-                    <p className="text-gray-600 leading-relaxed">
+                    <h2 className="text-xl font-semibold mt-4 text-[#052852] ">Description</h2>
+                    <p className="text-gray-600 mt-2 leading-relaxed">
                       {currentProduct.description}
                     </p>
+
+                    <button  onClick={() => setShowInquiryForm(true)}
+                    className='border bg-[#1290ca] p-2 px-7 rounded mt-5 text-white text-lg'>
+                      Inquiry Now
+                    </button>
                   </div>
 
                   {/* Features in Bottom Left */}
 
                 </div>
+
                 <div className="lg:col-span-2">
-                  <h2 className="text-xl font-semibold">Key Features</h2>
+                  <h2 className="text-xl text-[#052852]  font-semibold">Key Features</h2>
                   <ul className="space-y-2 mt-3  lg:grid grid-cols-2">
                     {[
                       'High efficiency and reliability in material transport',

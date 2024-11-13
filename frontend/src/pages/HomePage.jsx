@@ -39,11 +39,11 @@ const Homepage = () => {
         {/* <Navbar /> */}
         <HomeCarousel  />
         <ProductGridView />
-        <MainCarousel  />
         <AboutUs />
 
         {/* <Counter /> */}
         <OurClientsPage />
+        <MainCarousel  />
         <ValuesCarousel /> 
         <VideoBannerSection />
         <VideoBanner />

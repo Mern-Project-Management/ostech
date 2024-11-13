@@ -33,7 +33,7 @@ const recentPosts = [
 
 export default function Blog() {
     return (
-        <div className=" px-4 md:px-6 bg-white lg:px-8 relative">
+        <div className=" px-4 md:px-6 mb-10 bg-white lg:px-8 relative">
 
             <div
                 className="absolute inset-0 opacity-5"
@@ -46,12 +46,12 @@ export default function Blog() {
                 <div className="lg:flex lg:gap-8">
                     {/* Main Content */}
                     <div className="lg:w-2/3">
-                        <h2 className="text-3xl font-bold mb-8">Latest from the Blog</h2>
+                        <h2 className="text-3xl text-[#052852] font-bold mb-8">Latest from the Blog</h2>
 
                         {/* Featured Post */}
-                        <div className="bg-white shadow-lg rounded-lg h-[40vh] border border-gray-200 mb-12 overflow-hidden">
+                        <div className="bg-white transform transition-transform duration-100 hover:scale-105 hover:shadow-md hover:shadow-[#1290ca]hover:scale-105 shadow-lg hover:shadow-[#1290ca] shadow-[#1290ca]/50 rounded-lg h-[50vh] border border-gray-200 mb-12 overflow-hidden">
                             <div className="md:flex">
-                                <div className="md:w-2/5 lg:w-[80%] h-[40vh]">
+                                <div className="md:w-2/5 p-5 lg:w-[80%] h-[50vh]">
                                     <img
                                         src={hero4}
                                         alt="Featured blog post img"
@@ -60,10 +60,10 @@ export default function Blog() {
                                         className="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
                                     />
                                 </div>
-                                <div className="md:w-3/5 p-6">
+                                <div className="md:w-3/5 h-[50vh] p-4">
                                     <div className="card-header">
                                         <h3 className="card-title text-2xl font-bold mb-2 text-gray-800">
-                                            <a href="#" className="hover:underline">
+                                            <a href="#" className="hover:underline text-[#052852]">
                                                 The Future of Web Development: Trends to Watch in 2024
                                             </a>
                                         </h3>
@@ -82,7 +82,7 @@ export default function Blog() {
                                         </div>
                                     </div>
                                     <div className="card-footer ">
-                                        <button className="btn bg-[#39b7f1] text-white hover:bg-[#41acdd] px-8 py-2 rounded">
+                                        <button className="btn bg-[#1290ca] text-white hover:bg-[#1299ca] px-8 py-2 rounded">
                                             Read More
 
                                         </button>
@@ -92,38 +92,41 @@ export default function Blog() {
                         </div>
 
                         {/* Recent Posts */}
-                        <h3 className="text-2xl font-bold mb-6">Recent Posts</h3>
-                        <div className="grid gap-6 md:grid-cols-2">
+                        <h3 className="text-2xl text-[#052852] font-bold mb-6">Recent Posts</h3>
+                        <div className="grid gap-6 md:grid-cols-2 ">
                             {recentPosts.map((post, index) => (
-                                <div key={index} className="bg-white shadow-lg rounded-lg border border-gray-200 overflow-hidden">
-                                    <img
-                                        src={post.img}
-                                        alt={`${post.title} cover img`}
-                                        width={400}
-                                        height={200}
-                                        className="w-full h-48 object-cover rounded-t-lg"
-                                    />
-                                    <div className="card-header p-4">
-                                        <h3 className="card-title text-xl font-bold text-gray-800">
-                                            <a href="#" className="hover:underline">
-                                                {post.title}
-                                            </a>
-                                        </h3>
-                                    </div>
-                                    <div className="card-content p-4">
-                                        <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                                        <div className="flex items-center text-sm text-gray-500">
-                                            <CalendarIcon className="mr-2 h-4 w-4" />
-                                            <span>{post.date}</span>
-                                        </div>
-                                    </div>
-                                   <div className="card-footer p-4 cursor-pointer">
-                                        <button className="btn bg-[#f9fafa]  border-black shadow-lg border text-black hover:bg-[#41acdd] px-8 py-2 rounded">
-                                            Read More
-
-                                        </button>
-                                    </div>
-                                </div>
+                             <div
+                             key={index}
+                             className="bg-white shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-md hover:shadow-[#1290ca] shadow-[#1290ca]/50 rounded-lg border border-gray-200 overflow-hidden"
+                           >
+                             <img
+                               src={post.img}
+                               alt={`${post.title} cover img`}
+                               width={400}
+                               height={200}
+                               className="w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 hover:opacity-90"
+                             />
+                             <div className="card-header p-4">
+                               <h3 className="card-title text-xl font-bold text-gray-800">
+                                 <a href="#" className="hover:underline hover:text-[#1290ca] transition-colors duration-300">
+                                   {post.title}
+                                 </a>
+                               </h3>
+                             </div>
+                             <div className="card-content p-4">
+                               <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                               <div className="flex items-center text-sm text-gray-500">
+                                 <CalendarIcon className="mr-2 h-4 w-4" />
+                                 <span>{post.date}</span>
+                               </div>
+                             </div>
+                             <div className="card-footer p-4 cursor-pointer">
+                               <button className="btn bg-[#1290ca] text-white hover:bg-[#1299ca] px-8 py-2 rounded">
+                                 Read More
+                               </button>
+                             </div>
+                           </div>
+                           
                             ))}
                         </div>
                     </div>
@@ -132,34 +135,34 @@ export default function Blog() {
                     <div className="lg:w-1/3 mt-8 lg:mt-10">
                         {/* Share Your Thoughts Card */}
                         <div className="sticky top-24 mb-8 p-7">
-                            <div className="bg-[#052852] shadow-lg rounded-lg border h-[45vh] border-gray-200">
+                            <div className="bg-[#052852] py-10 px-5 shadow-lg hover:shadow-md hover:shadow-[#052852] shadow-[#052852]/50  border  border-gray-200">
                                 <div className="card-header p-4">
-                                    <h3 className="card-title mt-5 text-4xl text-white font-bold">
+                                    <h3 className="card-title text-3xl text-white font-bold">
                                         Connect with Us for Custom Solutions</h3>
                                 </div>
                                 <div className="px-4 pb-4">
                                     <p className="mb-4 text-lg text-gray-400">
                                         Submit Your Inquiry Below to Explore Tailored Industrial Products for Your Business
                                     </p>
-                                    <button className="btn bg-[#39b7f1] text-white hover:bg-blue-700 w-1/2 py-2 rounded">
+                                    <button className="btn bg-[#ffffff] text-[052852]  w-1/2 py-2 rounded">
                                         Get Inquiry
                                     </button>
                                 </div>
                             </div>
                             {/* Contact Card */}
                             <div className="mt-5 ">
-                                <div className="bg-[#052852] flex flex-col gap-4 shadow-lg rounded-lg border border-gray-200 p-6">
+                                <div className="bg-[#052852] flex flex-col gap-4 shadow-lg hover:shadow-md hover:shadow-[#052852] shadow-[#052852]/50  border border-gray-200 p-10 ">
                                     <div className="card-header">
-                                        <h3 className="card-title text-2xl font-bold text-white">Get in Touch</h3>
+                                        <h3 className="card-title text-2xl font-bold text-[#ffffff]">Get in Touch</h3>
                                     </div>
                                     <div className="card-content flex flex-col gap-2">
                                         <div className="flex items-center">
-                                            <PhoneIcon className="h-6 w-6 mr-2 text-gray-300" />
-                                            <span className="text-lg text-gray-300">+1 (555) 123-4567</span>
+                                            <PhoneIcon className="h-6 w-6 mr-2 text-[#ffffff]" />
+                                            <span className="text-lg text-[#ffffff]">+1 (555) 123-4567</span>
                                         </div>
                                         <div className="flex items-center ">
-                                            <MailIcon className="h-6 text-gray-300 w-6 mr-2" />
-                                            <a href="mailto:contact@example.com" className="text-lg text-gray-300 hover:underline">
+                                            <MailIcon className="h-6 text-[#ffffff] w-6 mr-2" />
+                                            <a href="mailto:contact@example.com" className="text-lg text-[#ffffff] hover:underline">
                                                 contact@example.com
                                             </a>
                                         </div>

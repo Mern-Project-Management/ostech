@@ -10,6 +10,7 @@ import ContactForm from './components/contactUs/contactForm';
 import ContactPage from './pages/ContactPage';
 
 import { ProductDetailPage } from './pages/ProductDetailPage';
+import Resource from './pages/Resource';
 function App() {
   return (
     <Router>
@@ -24,7 +25,8 @@ function App() {
           <Route path="/products" element={<ProductPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
           <Route path="/products/:productId" element={<ProductDetailPage />} />
-         
+          <Route path="/resources" element={<Resource />} />
+        
           </Route>
         </Routes>
       </div>

@@ -13,8 +13,8 @@ const AboutUsPage = () => {
     <div className='pt-[4%]'>
         <Banner backgroundImage={banner} title="About Us" />
         <AboutUs />
-        <MissionVisionSection />
         <FAQSection />
+        <MissionVisionSection />
      
         <OurClientsPage />
         <VideoBanner />

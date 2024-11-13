@@ -33,7 +33,7 @@ const OurClientsPage = () => {
     return (
         <div>
             <div className='flex flex-col justify-center mt-8 items-center mb-10'>
-                <h2 className='lg:text-4xl md:text-3xl text-lg font-bold'>{heading}</h2>
+                <h2 className='lg:text-4xl md:text-3xl text-[#052852] text-lg font-bold'>{heading}</h2>
                 <p className='w-[80%] text-center lg:text-lg mt-3 text-sm '>{subheading}</p>
             </div>
 

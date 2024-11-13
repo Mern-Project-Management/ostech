@@ -62,11 +62,11 @@ export default function WhyChooseUs() {
             <section className=" mb-10 mt-10 ">
       <div className="container mx-auto px-4">
      
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 gap-8">
           {offerings.map((offering, index) => (
             <div
               key={index}
-              className={`bg-card p-6 rounded-lg shadow-lg transition-all duration-500 ease-in-out transform hover:scale-105 ${
+              className={`bg-card  shadow-lg hover:shadow-md hover:shadow-[#1290ca] shadow-[#1290ca]/50  p-6 rounded-lg  transition-all duration-500 ease-in-out transform hover:scale-105 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}

@@ -30,31 +30,28 @@ const MissionVisionSection = () => {
   return (
     <div
       id="mission-vision-section"
-      className="relative h-[85vh] flex items-center justify-center py-20"
+      className="relative min-h-screen  flex items-center justify-center py-16 lg:py-20"
       style={{
         backgroundImage: `url(${backgroundImageUrl})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        position: 'relative',
       }}
     >
       {/* Black Overlay */}
-      <div className="absolute inset-0  bg-[#052852] bg-opacity-70 z-0"></div>
+      <div className="absolute inset-0 bg-[#052852] bg-opacity-70 z-0"></div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 relative z-10">
+      <div className="max-w-7xl gap-2 mx-auto grid grid-cols-1 lg:grid-cols-2  relative z-10">
         {/* Mission Text Section */}
         <div
-          className={`bg-white p-12 flex flex-col items-center text-center transition-all duration-1000 transform ${
+          className={`bg-white p-8 lg:p-12 flex flex-col items-center text-center shadow-lg rounded-lg transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
-       
-            <LightbulbIcon className="w-10 h-10 text-blue-600 mb-2 animate-float" />
-            <h2 className="text-3xl font-bold text-navy-900 mb-4">
-              Our Mission
-              <div className="h-1 w-20  bg-blue-600 mx-auto mt-2"></div>
-            </h2>
-        
+          <LightbulbIcon className="w-10 h-10 text-blue-600 mb-4 animate-float" />
+          <h2 className="text-2xl lg:text-3xl font-bold text-navy-900 mb-4">
+            Our Mission
+            <div className="h-1 w-16 lg:w-20 bg-blue-600 mx-auto mt-2"></div>
+          </h2>
           <p className="text-gray-700 max-w-md">
             We aspire to be one of the largest groups in the SPM manufacturing sector.
             We aim to achieve the impossible and guarantee best-in-class service
@@ -62,53 +59,46 @@ const MissionVisionSection = () => {
           </p>
         </div>
 
-        {/* Mission Image Background Section */}
+        {/* Mission Image Section */}
         <div
-          className={`relative overflow-hidden transition-all duration-1000 delay-200 transform ${
+          className={`relative overflow-hidden  rounded-lg shadow-lg transition-all duration-1000 delay-200 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
           style={{
             backgroundImage: `url(${mission})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '35vh',
-            position: 'relative',
+            height: '42vh',
           }}
-        >
-          {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
-        </div>
+        ></div>
 
-        {/* Vision Image Background Section */}
+        {/* Vision Image Section */}
         <div
-          className={`relative overflow-hidden transition-all duration-1000 delay-400 transform ${
+          className={`relative overflow-hidden rounded-lg shadow-lg transition-all duration-1000 delay-400 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
           style={{
             backgroundImage: `url(${vision})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '35vh',
-            position: 'relative',
+            height: '40vh',
           }}
-        >
-          {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
-        </div>
+        ></div>
 
         {/* Vision Text Section */}
         <div
-          className={`bg-white p-12 flex flex-col items-center text-center transition-all duration-1000 delay-600 transform ${
+          className={`bg-white p-8 lg:p-12 flex flex-col items-center text-center shadow-lg rounded-lg transition-all duration-1000 delay-600 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}
         >
-          <Target className="w-10 h-10 text-blue-600 mb-2 animate-pulse" />
-          <h2 className="text-3xl font-bold text-navy-900 mb-4">
+          <Target className="w-10 h-10 text-blue-600 mb-4 animate-pulse" />
+          <h2 className="text-2xl lg:text-3xl font-bold text-navy-900 mb-4">
             Our Vision
-            <div className="h-1 w-20 bg-blue-600 mx-auto mt-2"></div>
+            <div className="h-1 w-16 lg:w-20 bg-blue-600 mx-auto mt-2"></div>
           </h2>
           <p className="text-gray-700 max-w-md">
-            To become the biggest brand in the automation industry –
-            the most reliable, efficient, and customer-friendly company
-            in the world.
+            To become the biggest brand in the automation industry – the most reliable,
+            efficient, and customer-friendly company in the world.
           </p>
         </div>
       </div>

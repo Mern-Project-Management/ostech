@@ -8,7 +8,7 @@ export const ProductDetailPage = () => {
   return (
     <div className='pt-[5%]'>
           <Banner backgroundImage={banner} title="Products" />
-         <div className='max-w-[85rem] mx-auto'>
+         <div className='max-w-[95rem] mx-auto'>
          <ProductDetail />
         
          </div>

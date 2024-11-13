@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from "../../assets/logo.png";
 import { Outlet, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
   const location = useLocation();
 
   const resourcesItems = [
@@ -26,23 +25,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleDropdown = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
+  const navClasses = `w-full transition-all duration-300 ${isFixed ? 'fixed top-0 shadow-lg bg-white' : 'absolute bg-white'} z-50`;
 
-  const isHome = location.pathname === '/';
+  const linkClasses = `transition-colors duration-300 font-medium ${isFixed ? 'text-black hover:text-gray-600' : 'text-gray-800 hover:text-gray-600'}`;
 
-  const navClasses = `w-full transition-all duration-300 ${
-    isFixed ? 'fixed top-0 shadow-lg bg-white' : isHome ? 'absolute bg-transparent' : 'absolute bg-white'
-  } z-50`;
 
-  const linkClasses = `transition-colors duration-300 font-medium ${
-    isFixed || !isHome ? 'text-black hover:text-gray-600' : 'text-white hover:text-gray-200'
-  }`;
+  const buttonClasses = `transition-colors duration-300 px-6 py-2 rounded-md ${isFixed ? 'bg-[#1290ca] text-white hover:bg-[#1290ca]' : 'bg-[#1290ca] text-white hover:bg-[#1290ca]'}`;
 
-  const buttonClasses = `transition-colors duration-300 px-4 py-2 rounded-md ${
-    isFixed || !isHome ? 'bg-blue-500 text-white hover:bg-blue-700' : 'bg-white text-black hover:bg-gray-100'
-  }`;
 
   return (
     <>
@@ -59,26 +48,9 @@ const Navbar = () => {
               <a href="/" className={linkClasses}>Home</a>
               <a href="/about" className={linkClasses}>About Us</a>
               <a href="/products" className={linkClasses}>Products</a>
-              <a href="/blogs" className={linkClasses}>Blogs</a>
-               {/* Resources Dropdown */}
-              <div className="relative">
-                <button onClick={() => toggleDropdown('resources')} className={linkClasses}>
-                  Resources
-                </button>
-              
-
-                {activeDropdown === 'resources' && (
-                  <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
-                    {resourcesItems.map((item) => (
-                      <a key={item.title} href={item.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                        {item.title}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <a href="/resources" className={linkClasses}>Resources</a>
+              {/* <a href="/blog" className={linkClasses}>Blogs</a> */}
               <a href="/contact-us" className={linkClasses}>Contact Us</a>
-            
               <a href="" className={buttonClasses}>Inquiry</a>
             </div>
 
@@ -86,7 +58,7 @@ const Navbar = () => {
             <div className="md:hidden ml-16">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`focus:outline-none ${isFixed || !isHome ? 'text-black' : 'text-white'}`}
+                className={`focus:outline-none ${isFixed ? 'text-black' : 'text-white'}`}
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -100,10 +72,10 @@ const Navbar = () => {
                 <a href="/" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">Home</a>
                 <a href="/about" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">About Us</a>
                 <a href="/products" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">Products</a>
-                <a href="/blog" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">Blogs</a>
+                {/* <a href="/blog" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">Blogs</a> */}
+                <a href="/resources" className={linkClasses}>Resources</a>
+             
                 <a href="/contact-us" className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact Us</a>
-        
-            
               </div>
             </div>
           )}

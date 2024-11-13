@@ -3,7 +3,7 @@ import { Facebook, Twitter, Linkedin, Youtube, Mail, Clock, Phone, MapPin } from
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-900 text-white py-12">
+    <footer className="w-full bg-[#052852] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info Section */}
         <div className="space-y-6">
