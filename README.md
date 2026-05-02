@@ -84,10 +84,7 @@ cd ostech
 cd backend
 npm install
 # Create a .env file:                                                    .env
-# DATABASE_URI = mongodb+srv://admin:admin@devcoder980.64axway.mongodb.net/ostech
-# EMAIL_USER = "ostech44@gmail.com"
-# EMAIL_FROM = "ostech44@gmail.com"
-# EMAIL_PASS="sfps xzsl atlo buew"
+
 # PORT = 3024
 npm start
 ```
