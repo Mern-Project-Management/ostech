@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+*.zip
+
+# Environment variables (secrets - never commit!)
+.env
+.env.*
+!.env.example
+
+# Sync and temp files
+.sync/
+*.sync
+.sync.ffs_db
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Uploads directories
+uploads/
+**/uploads/
